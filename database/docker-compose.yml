@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: corders_postgres
+    environment:
+      POSTGRES_DB: corders
+      POSTGRES_USER: corders
+      POSTGRES_PASSWORD: corders
+    ports:
+      - "5432:5432"
+    volumes:
+      - corders_data:/var/lib/postgresql/data
+
+volumes:
+  corders_data:
